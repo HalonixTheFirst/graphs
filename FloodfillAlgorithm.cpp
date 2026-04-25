@@ -15,7 +15,7 @@ public:
     while(q.size()){
       auto tile = q.front();
       q.pop();
-      //{a,b};
+      //{a,b}
       // 1 1 1
       // 1 1 0 (1,1)
       // 1 0 1
