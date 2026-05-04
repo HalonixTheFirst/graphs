@@ -11,7 +11,7 @@ public:
       for (int k=0;k<4;k++) {
         int nrow=i+drow[k];
         int ncol=j+dcol[k];
-        if (ncol>=0 && ncol<m && nrow>=0 && nrow<m && !vis[nrow][ncol] && grid[nrow][ncol]) {
+        if (ncol>=0 && ncol<m && nrow>=0 && nrow<n && !vis[nrow][ncol] && grid[nrow][ncol]) {
           dfs(grid,vis,nrow,ncol);
         }
       }
