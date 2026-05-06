@@ -10,7 +10,7 @@ class Solution {
       for(int k =0 ;k < 4;k++){
         int row= i + drow[k];
         int col = j + dcol[k];
-        if(row>=0 && row<n && col>=0 && col<m && !vis[row][col] && grid[row][col]){
+        if(row>=0 && row<n && col>=0 && col<m && !vis[row][col] && grid[row][col]=='1'){
           dfs(grid,row,col,vis);
         }
       }
