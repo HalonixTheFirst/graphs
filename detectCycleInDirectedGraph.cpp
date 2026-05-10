@@ -9,13 +9,13 @@ public:
     pathVis[i]=true;
     for(auto node  : adj[i]){
       if(!vis[node]){
-        if(dfs(vis,pathVis,adj,node)) return false;
+        if(dfs(vis,pathVis,adj,node)) return true;
       }
       else if(pathVis[node]){
         return true;
       }
     }
-    pathVis[node]=false;
+    pathVis[i]=false;
     return false;
   }
   bool isCyclic(int V, vector<vector<int>> &edges) {
