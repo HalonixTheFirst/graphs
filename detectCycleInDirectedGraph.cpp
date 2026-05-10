@@ -4,7 +4,7 @@ class Solution {
   private:
     int n;
 public:
-  bool dfs(vector<int> vis,vector<int> pathVis,vector<vector<int>> adj,int i){
+  bool dfs(vector<int> &vis,vector<int> &pathVis,vector<vector<int>> adj,int i){
     vis[i]=true;
     pathVis[i]=true;
     for(auto node  : adj[i]){
