@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 class Solution {
-  private:
-    int n;
 public:
   bool dfs(vector<int> &vis,vector<int> &pathVis,vector<vector<int>> adj,int i){
     vis[i]=true;
@@ -19,9 +17,8 @@ public:
     return false;
   }
   bool isCyclic(int V, vector<vector<int>> &edges) {
-    n = edges.size();
-    vector<int> vis(n,0);
-    vector<int> pathVis(n,0);
+    vector<int> vis(V,0);
+    vector<int> pathVis(V,0);
     vector<vector<int>> adj(V);
     for(auto i : edges){
       adj[i[0]].push_back(i[1]);
