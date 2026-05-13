@@ -13,13 +13,27 @@ public:
     vector<string> used;
     unordered_set<string> s(wordList.begin(),wordList.end());
     while (q.size()) {
+      int size = q.size();
       if (!ans.empty()) return ans;
       for (auto w : used) s.erase(w);
       used.clear();
-      for (int i =0; i<q.size();i++) {
+      for (int j =0; j<size;j++) {
         auto list = q.front();
         q.pop();
-        nextWord(list,s,q,used);
+        string word = list.back();
+        for (int i=0 ;i<word.size();i++){
+          string x = word;
+          for (char ch = 'a' ; ch<='z' ; ch++) {
+            x[i] = ch;
+            if (s.count(x)) {
+              auto new_list = list;
+              new_list.push_back(x);
+              q.push(new_list);
+              used.push_back(x);
+              if (x==endWord) ans.push_back(new_list);
+            }
+          }
+        }
       }
     }
     return ans;
