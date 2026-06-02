@@ -24,11 +24,11 @@ public:
     while(!q.empty()){
       auto tp =q.front();
       q.pop();
+      ans.push_back(tp);
       for(auto i : adj[tp]){
         indegree[i]--;
         if(indegree[i]==0){
           q.push(i);
-          ans.push_back(i);
         }
       }
     }
