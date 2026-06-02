@@ -13,14 +13,13 @@ public:
         adj[node].push_back(i);
       }
     }
-    vector<int> vis(graph.size(),0), indegree(graph.size(),0);
+    vector<int> indegree(graph.size(),0);
     for(int i =0 ;i <graph.size() ;i++){
       for(auto k : adj[i]) indegree[k]++;
     }
     queue<int> q;
-
-    for(auto i : indegree){
-      if(i==0) q.push(i);
+    for(int i =0 ;i< indegree.size();i++){
+      if(indegree[i]==0) q.push(i);
     }
     while(!q.empty()){
       auto tp =q.front();
