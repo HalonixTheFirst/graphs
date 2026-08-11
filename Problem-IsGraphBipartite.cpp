@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#include <bits/stdc++.h>
-using namespace std;
 class Solution {
 private:
   bool dfs(int v, bool c,vector<int> &vis,vector<vector<int>>& graph) {

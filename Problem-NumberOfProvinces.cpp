@@ -7,7 +7,6 @@ public:
     for(int j=0;j<adj.size();j++){
       if(adj[i][j] && !vis[j]) dfs(j,adj,vis);
     }
-
   }
   int findCircleNum(vector<vector<int>>& isConnected) {
     int cnt=0;
