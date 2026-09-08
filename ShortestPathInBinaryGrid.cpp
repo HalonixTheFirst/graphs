@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
   bool isValidCell(vector<vector<int>> &grid,int row,int col) {
