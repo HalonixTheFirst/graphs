@@ -1,9 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
-  private:
-    priority_queue<pair<int,pair<int,int>>,vector<pair<int,pair<int,int>>>,greater<pair<int,pair<int,int>>>> pq;
+private:
+  priority_queue<pair<int,pair<int,int>>,vector<pair<int,pair<int,int>>>,greater<pair<int,pair<int,int>>>> pq;
   //This pq will store entries like so : [cost][count,city];
+  //Testing [count][cost,city]
   //The smallest current distance will be picked first to find
 public:
   void findPath(vector<vector<pair<int,int>>>& adj,int src,int dst,int k, vector<int> &dist) {
@@ -13,8 +14,8 @@ public:
     while (pq.size()) {
       auto tp = pq.top();
       pq.pop();
-      int cost = tp.first;
-      int count = tp.second.first;
+      int count = tp.first;
+      int cost = tp.second.first;
       int city = tp.second.second;
       if (count>k) continue;
       for (auto i : adj[city]) {
@@ -22,7 +23,7 @@ public:
         int price = i.second;
         if (dist[neighbour]> cost + price) {
           dist[neighbour] = cost +price;
-          pq.push({dist[neighbour],{count+1,neighbour}});
+          pq.push({count+1,{dist[neighbour],neighbour}});
         }
       }
     }
