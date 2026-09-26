@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 void floydWarshall(vector<vector<int>> &dist) {
-  // dist => {{src,dest},{distance}};
+  // dist => {{src,dest,distance}};
   int V = dist.size();
   int INF = 1e8;
   for (int i =0 ;i < V; i++) {
