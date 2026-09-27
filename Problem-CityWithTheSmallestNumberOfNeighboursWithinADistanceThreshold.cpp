@@ -21,6 +21,18 @@ public:
     }
     int bestCount =0 ;
     int answer =-1 ;
-
+    for (int i =0 ;i<n;i++) {
+      int count =0 ;
+      for (int j =0 ;j<n;j++) {
+        if (i!=j) {
+          if (dist[i][j]<distanceThreshold) count++;
+        }
+      }
+      if (count<=bestCount) {
+        bestCount= count;
+        answer = i;
+      }
+    }
+    return answer;
   }
 };
