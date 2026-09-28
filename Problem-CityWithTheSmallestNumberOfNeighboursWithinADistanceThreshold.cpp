@@ -58,9 +58,12 @@ public:
       adj[src].push_back({dest,wt});
     }
     queue<pair<pair<int,int>,int>> q;
+    vector<int> dist(n);
     q.push({{0,0},0});
     while (!q.empty()) {
       auto tp = q.front();
       q.pop();
+
+
     }
   }
