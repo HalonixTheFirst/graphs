@@ -9,7 +9,7 @@ class Solution{
   public:
   priority_queue<pair<int,pair<int,int>>,vector<pair<int,pair<int,int>>>,greater<pair<int,pair<int,int>>>> pq;
   vector<pair<int,int>> mst;
-  int Solve(vector<vector<int>> &adj,vector<int> &vis) {
+  int Solve(vector<vector<pair<int,int>>> &adj,vector<int> &vis) {
     pq.push({0,{0,-1}});
     int sum =0 ;
     while (!pq.empty()) {
@@ -23,11 +23,11 @@ class Solution{
       vis[node] =true;
       if (parent != -1) mst.push_back({parent,node});
       for (auto i : adj[node]) {
-        if (vis[i[1]] == true) {
+        if (vis[i.first] == true) {
           continue;
         }
         else {
-          pq.push({i[0],{i[1],node}});
+          pq.push({i.first,{i.second,node}});
         }
       }
     }
