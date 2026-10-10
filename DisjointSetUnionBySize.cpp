@@ -1,35 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 class DSU {
-private:
+public:
   vector<int> size;
   vector<int> parent;
-public:
   DSU(int n){
-    size.resize(n+1,0);
+    size.resize(n+1,1);
     parent.resize(n+1);
-    for (int i= 0;i<=n;i++) parent[i]=parent[i];
+    for (int i= 0;i<=n;i++) parent[i]=i;
   }
   int getParent(int v) {
     if (v == parent[v]) return v;
-    else parent[v]= getParent(parent[v]);
+    else return parent[v]= getParent(parent[v]);
   }
-  void unionBySize(int n,int m) {
-    if (n==m) return;
-    if (size[m]>size[n]) {
-      size[m]+=size[n];
-      parent[n]=m;
-    }
-    else if (size[n]>size[m]) {
-      size[n]+=size[m];
-      parent[m]=n;
+  void unionBySize(int u,int v) {
+    int u_p = getParent(u);
+    int v_p = getParent(v);
+    if (u_p == v_p) return;
+    if (size[v_p]>size[u_p]) {
+      size[v_p]+=size[u_p];
+      parent[u_p]=v_p;
     }
     else {
-      size[n]+=size[m];
-      parent[m]=n;
+      size[u_p]+=size[v_p];
+      parent[v_p]=u_p;
     }
   }
 };
-int main(){
-
-}
