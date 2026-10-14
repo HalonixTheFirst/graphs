@@ -14,7 +14,7 @@ public:
       if (n == parent[n]) return n;
       else parent[n] = getParent(parent[n]);
    }
-   void unio(int n ,int m){
+   void union(int n ,int m){
       int p1 = getParent[n];
       int p2 = getParent[m];
       if (rank[p1] > rank[p2]) {
